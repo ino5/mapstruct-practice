@@ -15,15 +15,15 @@ public class UserMapperTest {
         // given
         User user = new User();
         user.setId(1L);
-        user.setName("Inho");
+        user.setName("Jack");
 
         // when
         UserDto dto = UserMapper.INSTANCE.userToUserDto(user);
 
         // then
+        assertEquals(1, dto.getId());
+        assertEquals("Jack", dto.getName());
         assertEquals(user.getId(), dto.getId());
         assertEquals(user.getName(), dto.getName());
-
-
     }
 }
